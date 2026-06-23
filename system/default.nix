@@ -22,4 +22,7 @@
 
   # Host & Guest Clipboard
   services.spice-vdagentd.enable = true;
+
+  # Tell VM 2k Render
+  boot.kernelParams = [ "video=Virtual-1:2560x1440@60" ];
 }

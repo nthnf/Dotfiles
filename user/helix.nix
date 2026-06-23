@@ -12,14 +12,6 @@
 
     settings = {
       theme = "tokyonight";
-      # editor = {
-      # 	"line-number" = "relative";
-      # 	"cursor-shape" = {
-      # 		insert = "bar";
-      # 		shape = "block";
-      # 		select = "underline";
-      # 	};
-      # };
     };
 
     languages = {
@@ -29,7 +21,7 @@
           auto-format = true;
           formatter = {
             command = "nixfmt";
-            args =["-"];
+            args = [ "-" ];
           };
         }
       ];

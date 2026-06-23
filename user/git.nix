@@ -4,13 +4,13 @@
   programs.git = {
     enable = true;
 
-    userName = "Nathan Farrel";
-    userEmail = "nathanfarrel1128@gmail.com";
-
-    extraConfig = {
+    settings = {
       init = {
         defaultBranch = "main";
       };
+
+      user.name = "Nathan Farrel";
+      user.email = "nathanfarrel1128@gmail.com";
     };
   };
 }

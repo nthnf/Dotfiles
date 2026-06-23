@@ -5,7 +5,7 @@
     enable = true;
     enableBashIntegration = true;
     settings = {
-      theme = "tokyonight";
+      theme = "TokyoNight Storm";
       "window-decoration" = false;
       font-size = 12;
       "window-theme" = "ghostty";

@@ -4,14 +4,7 @@
   programs.home-manager.enable = true;
 
   imports = [
-    ./modules/editor
-    ./modules/tools
-    ./modules/dev
-    ./modules/config
-  ];
-
-  home.packages = with pkgs; [
-    btop
+    ./user
   ];
 
   home.stateVersion = "26.05";

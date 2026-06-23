@@ -19,4 +19,7 @@
 
   # SSH service
   services.openssh.enable = true;
+
+  # Host & Guest Clipboard
+  services.spice-vdagentd.enable = true;
 }

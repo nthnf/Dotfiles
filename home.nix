@@ -7,6 +7,7 @@
     ./modules/editor
     ./modules/tools
     ./modules/dev
+    ./modules/config
   ];
 
   home.packages = with pkgs; [

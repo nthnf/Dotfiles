@@ -13,6 +13,8 @@
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
+
+      nrb = "sudo nixos-rebuild switch --flake ~/.dotfiles";
     };
   };
 }

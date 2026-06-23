@@ -5,7 +5,6 @@
     btop.enable = true;
     fastfetch.enable = true;
     yazi.enable = true;
-    zellij.enable = true;
     fuzzel.enable = true;
     eza.enable = true;
 

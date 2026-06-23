@@ -12,6 +12,15 @@
 
     settings = {
       theme = "tokyonight";
+
+      editor = {
+        bufferline = "multiple";
+      };
+
+      keys.normal = {
+        "H" = "goto_previous_buffer";
+        "L" = "goto_next_buffer";
+      };
     };
 
     languages = {

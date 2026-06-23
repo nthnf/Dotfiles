@@ -25,5 +25,6 @@
     ./helix.nix
     ./niri.nix
     ./sh.nix
+    ./zellij.nix
   ];
 }

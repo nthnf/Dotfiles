@@ -133,8 +133,6 @@
     enable = true;
     image = ../../assets/miku.png;
     
-    targets.sddm.enable = false;
-
     base16Scheme = {
       base00 = "1f1f28"; # Background (SumiInk1)
       base01 = "2a2a37"; # Lighter Background (SumiInk3)
@@ -146,12 +144,12 @@
       base07 = "c8c093"; # Active text
       base08 = "c34043"; # Red (AutumnRed)
       base09 = "c0a36e"; # Goldish Orange (BoatYellow)
-      base10 = "e6c384"; # Accent Gold (AutumnYellow)
-      base11 = "76946a"; # Green (Shinonome)
-      base12 = "6a9589"; # Aqua (WaveAqua)
-      base13 = "7e9cd8"; # Blue (CrystalBlue)
-      base14 = "957fb8"; # Purple (OniViolet)
-      base15 = "938aa9"; # Sakura Pink
+      base0A = "e6c384"; # Accent Gold (AutumnYellow)
+      base0B = "76946a"; # Green (Shinonome)
+      base0C = "6a9589"; # Aqua (WaveAqua)
+      base0D = "7e9cd8"; # Blue (CrystalBlue)
+      base0E = "957fb8"; # Purple (OniViolet)
+      base0F = "938aa9"; # Sakura Pink
     };
 
     fonts = {

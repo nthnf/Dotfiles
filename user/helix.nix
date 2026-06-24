@@ -15,6 +15,13 @@
 
       editor = {
         bufferline = "multiple";
+
+        text-width = 100;
+
+        soft-wrap = {
+          enable = true;
+          wrap-at-text-width = true;
+        };
       };
 
       keys.normal = {

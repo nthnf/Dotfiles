@@ -12,8 +12,47 @@
   ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
+  boot.loader.systemd-boot.enable = false;
+  boot.loader.limine = {
+    enable = true;
+    efiSupport = true;
+    resolution = "1920x1080x32";
+
+    style = {
+      wallpapers = [ ];
+      interface = {
+        branding = "Nix Bootloader";
+        brandingColor = "bb9af7";
+        resolution = "1280x720";
+      };
+      backdrop = "1a1b26";
+      graphicalTerminal = {
+        background = "1a1b26";
+        foreground = "c0caf5";
+        brightBackground = "24283b";
+        brightForeground = "c0caf5";
+        palette = "15161e;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;a9b1d6";
+        brightPalette = "414868;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;c0caf5";
+      };
+    };
+  };
+
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.kernelParams = [
+    "quiet"
+    "splash"
+  ];
+
+  boot.plymouth = {
+    enable = true;
+    theme = "cuts_alt";
+    themePackages = [
+      (pkgs.adi1090x-plymouth-themes.override {
+        selected_themes = [ "cuts_alt" ];
+      })
+    ];
+  };
 
   networking.hostName = "nfx"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -45,7 +84,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [ ];
   };
 
   # Allow unfree packages

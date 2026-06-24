@@ -7,6 +7,8 @@ let
 in
 {
   programs.niri.enable = true;
+  programs.niri.useNautilus = true;
+
   programs.xwayland.enable = true;
 
   environment.systemPackages = [ sddm-astronaut ];

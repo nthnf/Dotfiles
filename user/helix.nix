@@ -11,8 +11,6 @@
     ];
 
     settings = {
-      theme = "tokyonight";
-
       editor = {
         bufferline = "multiple";
 

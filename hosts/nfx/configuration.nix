@@ -128,4 +128,37 @@
     "nix-command"
     "flakes"
   ];
+
+  stylix = {
+    enable = true;
+    image = ../../assets/miku.png;
+    
+    targets.sddm.enable = false;
+
+    base16Scheme = {
+      base00 = "1f1f28"; # Background (SumiInk1)
+      base01 = "2a2a37"; # Lighter Background (SumiInk3)
+      base02 = "223249"; # Selection Background (WaveBlue0)
+      base03 = "727169"; # Comments / Dim (Funi)
+      base04 = "7fb4ca"; # Subdued text (SpringBlue)
+      base05 = "dcd7ba"; # Default text (FujiWhite)
+      base06 = "c8c093"; # Highlights (FujiSand)
+      base07 = "c8c093"; # Active text
+      base08 = "c34043"; # Red (AutumnRed)
+      base09 = "c0a36e"; # Goldish Orange (BoatYellow)
+      base10 = "e6c384"; # Accent Gold (AutumnYellow)
+      base11 = "76946a"; # Green (Shinonome)
+      base12 = "6a9589"; # Aqua (WaveAqua)
+      base13 = "7e9cd8"; # Blue (CrystalBlue)
+      base14 = "957fb8"; # Purple (OniViolet)
+      base15 = "938aa9"; # Sakura Pink
+    };
+
+    fonts = {
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "JetBrainsMono Nerd Font";
+      };
+    };
+  };
 }

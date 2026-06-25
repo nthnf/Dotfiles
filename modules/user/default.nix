@@ -1,6 +1,9 @@
 { pkgs, ... }:
 
 {
+  programs.home-manager.enable = true;
+  home.stateVersion = "26.05";
+
   programs = {
     btop.enable = true;
     fastfetch.enable = true;
@@ -24,7 +27,9 @@
     ./git.nix
     ./helix.nix
     ./niri.nix
+    ./noctalia.nix
     ./sh.nix
     ./tmux.nix
+    ./direnv.nix
   ];
 }

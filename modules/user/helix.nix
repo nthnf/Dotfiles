@@ -6,6 +6,7 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      nil
       nixd
       nixfmt
     ];
@@ -28,17 +29,5 @@
       };
     };
 
-    languages = {
-      language = [
-        {
-          name = "nix";
-          auto-format = true;
-          formatter = {
-            command = "nixfmt";
-            args = [ "-" ];
-          };
-        }
-      ];
-    };
   };
 }

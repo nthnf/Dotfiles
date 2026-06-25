@@ -133,7 +133,7 @@
 
   stylix = {
     enable = true;
-    image = ../../assets/miku.png;
+    image = ../../../assets/miku.png;
 
     targets.plymouth.enable = false;
 

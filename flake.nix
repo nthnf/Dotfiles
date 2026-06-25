@@ -21,7 +21,6 @@
 
     import-tree = {
       url = "github:vic/import-tree";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {

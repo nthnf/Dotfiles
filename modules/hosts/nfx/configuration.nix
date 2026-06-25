@@ -70,13 +70,18 @@
   users.users."nthnf" = {
     isNormalUser = true;
     description = "Nathan Farrel";
+    group = "nthnf";
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
     shell = pkgs.zsh;
   };
+
+  users.groups."nthnf" = {};
+
   programs.zsh.enable = true;
+
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -11,6 +11,9 @@
     ghostty
     nautilus
     brave
+    _7zip-zstd
+    unrar
+    peazip
   ];
 
   imports = [
@@ -18,6 +21,8 @@
     ./graphics.nix
     ./audio.nix
     ./sddm.nix
+    ./docker.nix
+    ./steam.nix
   ];
 
   # SSH service

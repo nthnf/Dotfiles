@@ -143,17 +143,17 @@
       base02 = "223249"; # Selection Background (WaveBlue0)
       base03 = "727169"; # Comments / Dim (Funi)
       base04 = "7fb4ca"; # Subdued text (SpringBlue)
-      base05 = "dcd7ba"; # Default text (FujiWhite)
-      base06 = "c8c093"; # Highlights (FujiSand)
-      base07 = "c8c093"; # Active text
-      base08 = "c34043"; # Red (AutumnRed)
-      base09 = "c0a36e"; # Goldish Orange (BoatYellow)
+      base05 = "ebd6b0"; # Default text (High-Contrast Cream)
+      base06 = "d4be98"; # Highlights (Gruvbox Sand)
+      base07 = "ebd6b0"; # Active text
+      base08 = "b4635c"; # Terracotta Red
+      base09 = "e78a4e"; # Peach / Orange
       base0A = "e6c384"; # Accent Gold (AutumnYellow)
-      base0B = "76946a"; # Green (Shinonome)
-      base0C = "6a9589"; # Aqua (WaveAqua)
-      base0D = "7e9cd8"; # Blue (CrystalBlue)
-      base0E = "957fb8"; # Purple (OniViolet)
-      base0F = "938aa9"; # Sakura Pink
+      base0B = "8fa082"; # Sage Green
+      base0C = "7ba096"; # Opal Cyan / Aqua
+      base0D = "738fa8"; # Slate Blue
+      base0E = "f5c2e7"; # Pink
+      base0F = "f5c2e7"; # Pink (alternative)
     };
 
     fonts = {

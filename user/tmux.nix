@@ -1,12 +1,107 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
+  # Disable automatic styling from Stylix to use our own custom layout with Stylix colors
+  stylix.targets.tmux.enable = false;
+
   programs.tmux = {
     enable = true;
+    shortcut = "Space";
     keyMode = "vi";
-    baseIndex = 1;
     mouse = true;
-    prefix = "C-Space";
-    terminal = "screen-256color";
+    baseIndex = 1;
+    escapeTime = 0;
+    terminal = "tmux-256color";
+    historyLimit = 50000;
+
+    extraConfig = ''
+      # Reload config
+      bind q source-file ~/.config/tmux/tmux.conf \; display "Configuration reloaded"
+      bind ? display-popup -E -w 80% -h 70% -T "Tmux keybindings" "omarchy-menu-tmux-keybindings --print | less -R"
+
+      # Vi mode for copy
+      bind -T copy-mode-vi v send -X begin-selection
+      bind -T copy-mode-vi y send -X copy-selection-and-cancel
+
+      # Pane Controls
+      bind h split-window -v -c "#{pane_current_path}"
+      bind v split-window -h -c "#{pane_current_path}"
+      bind x kill-pane
+
+      bind -n C-M-Left select-pane -L
+      bind -n C-M-Right select-pane -R
+      bind -n C-M-Up select-pane -U
+      bind -n C-M-Down select-pane -D
+
+      bind -n C-M-S-Left resize-pane -L 5
+      bind -n C-M-S-Down resize-pane -D 5
+      bind -n C-M-S-Up resize-pane -U 5
+      bind -n C-M-S-Right resize-pane -R 5
+
+      # Window navigation
+      bind r command-prompt -I "#W" "rename-window -- '%%'"
+      bind c new-window -c "#{pane_current_path}"
+      bind k kill-window
+
+      bind -n M-1 select-window -t 1
+      bind -n M-2 select-window -t 2
+      bind -n M-3 select-window -t 3
+      bind -n M-4 select-window -t 4
+      bind -n M-5 select-window -t 5
+      bind -n M-6 select-window -t 6
+      bind -n M-7 select-window -t 7
+      bind -n M-8 select-window -t 8
+      bind -n M-9 select-window -t 9
+
+      bind -n M-Left select-window -t -1
+      bind -n M-Right select-window -t +1
+      bind -n M-S-Left swap-window -t -1 \; select-window -t -1
+      bind -n M-S-Right swap-window -t +1 \; select-window -t +1
+
+      # Session controls
+      bind R command-prompt -I "#S" "rename-session -- '%%'"
+      bind C new-session -c "#{pane_current_path}"
+      bind K kill-session
+      bind P switch-client -p
+      bind N switch-client -n
+
+      bind -n M-Up switch-client -p
+      bind -n M-Down switch-client -n
+
+      # General
+      set -ag terminal-overrides ",*:RGB"
+      setw -g pane-base-index 1
+      set -g renumber-windows on
+      set -g focus-events on
+      set -g set-clipboard on
+      set -g allow-passthrough on
+      setw -g aggressive-resize on
+      set -g detach-on-destroy off
+      set -g extended-keys on
+      set -g extended-keys-format csi-u
+      set -sg escape-time 10
+
+      # Status bar
+      set -g status-position top
+      set -g status-interval 5
+      set -g status-left-length 30
+      set -g status-right-length 50
+      set -g window-status-separator ""
+      set -gw automatic-rename on
+      set -gw automatic-rename-format '#{b:pane_current_path}'
+
+      # Theme (Stylix integration, matching Zellij status layout)
+      set -g status-style "bg=default,fg=default"
+      set -g status-left "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.lib.stylix.colors.base0D},bold] NIX #[fg=#${config.lib.stylix.colors.base05},bg=default,bold] #S #[bg=default] "
+      set -g status-right "#[fg=#${config.lib.stylix.colors.base05}] %A, %d %b %Y %H:%M #[fg=#${config.lib.stylix.colors.base03}]#h "
+      set -g window-status-format "#[fg=#${config.lib.stylix.colors.base03}] #I:#W "
+      set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base0A},bold] #I:#W "
+      set -g pane-border-style "fg=#${config.lib.stylix.colors.base03}"
+      set -g pane-active-border-style "fg=#${config.lib.stylix.colors.base0D}"
+      set -g message-style "bg=default,fg=#${config.lib.stylix.colors.base0A}"
+      set -g message-command-style "bg=default,fg=#${config.lib.stylix.colors.base0A}"
+      set -g mode-style "bg=#${config.lib.stylix.colors.base0A},fg=#${config.lib.stylix.colors.base00}"
+      setw -g clock-mode-colour "#${config.lib.stylix.colors.base0A}"
+    '';
   };
 }

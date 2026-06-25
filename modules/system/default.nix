@@ -9,6 +9,7 @@
     zsh
     wl-clipboard
     ghostty
+    nautilus
     brave
   ];
 

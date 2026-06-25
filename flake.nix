@@ -21,18 +21,22 @@
 
     import-tree = {
       url = "github:vic/import-tree";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     niri = {
       url = "github:sodiboo/niri-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     noctalia = {
       url = "github:noctalia-dev/noctalia";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     devenv = {
       url = "github:cachix/devenv";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 

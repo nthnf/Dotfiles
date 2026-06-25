@@ -15,10 +15,6 @@
     historyLimit = 50000;
 
     extraConfig = ''
-      # Reload config
-      bind q source-file ~/.config/tmux/tmux.conf \; display "Configuration reloaded"
-      bind ? display-popup -E -w 80% -h 70% -T "Tmux keybindings" "omarchy-menu-tmux-keybindings --print | less -R"
-
       # Vi mode for copy
       bind -T copy-mode-vi v send -X begin-selection
       bind -T copy-mode-vi y send -X copy-selection-and-cancel
@@ -93,7 +89,6 @@
       # Theme (Stylix integration, matching Zellij status layout)
       set -g status-style "bg=default,fg=default"
       set -g status-left "#[fg=#${config.lib.stylix.colors.base00},bg=#${config.lib.stylix.colors.base0D},bold] NIX #[fg=#${config.lib.stylix.colors.base05},bg=default,bold] #S #[bg=default] "
-      set -g status-right "#[fg=#${config.lib.stylix.colors.base05}] %A, %d %b %Y %H:%M #[fg=#${config.lib.stylix.colors.base03}]#h "
       set -g window-status-format "#[fg=#${config.lib.stylix.colors.base03}] #I:#W "
       set -g window-status-current-format "#[fg=#${config.lib.stylix.colors.base0A},bold] #I:#W "
       set -g pane-border-style "fg=#${config.lib.stylix.colors.base03}"
@@ -101,7 +96,6 @@
       set -g message-style "bg=default,fg=#${config.lib.stylix.colors.base0A}"
       set -g message-command-style "bg=default,fg=#${config.lib.stylix.colors.base0A}"
       set -g mode-style "bg=#${config.lib.stylix.colors.base0A},fg=#${config.lib.stylix.colors.base00}"
-      setw -g clock-mode-colour "#${config.lib.stylix.colors.base0A}"
     '';
   };
 }

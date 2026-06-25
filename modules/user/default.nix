@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.home-manager.enable = true;
@@ -19,6 +19,7 @@
 
   home.packages = with pkgs; [
     dust
+    inputs.devenv.packages.${pkgs.stdenv.hostPlatform.system}.devenv
   ];
 
   imports = [

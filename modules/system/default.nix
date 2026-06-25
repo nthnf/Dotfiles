@@ -16,6 +16,7 @@
     ./niri.nix
     ./graphics.nix
     ./audio.nix
+    ./sddm.nix
   ];
 
   # SSH service

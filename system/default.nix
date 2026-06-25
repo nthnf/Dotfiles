@@ -6,9 +6,11 @@
     wget
     vim
     curl
+    zsh
     wl-clipboard
     ghostty
     noctalia-shell
+    brave
   ];
 
   imports = [

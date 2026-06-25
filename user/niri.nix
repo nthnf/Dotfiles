@@ -30,5 +30,4 @@ in
       ${mod}+Q { close-window; }
     }
   '';
-
 }

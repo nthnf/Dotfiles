@@ -22,18 +22,18 @@
       wallpapers = [ ];
       interface = {
         branding = "Nix Bootloader";
-        brandingColor = "bb9af7";
+        # brandingColor = "bb9af7";
         resolution = "1280x720";
       };
-      backdrop = "1a1b26";
-      graphicalTerminal = {
-        background = "1a1b26";
-        foreground = "c0caf5";
-        brightBackground = "24283b";
-        brightForeground = "c0caf5";
-        palette = "15161e;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;a9b1d6";
-        brightPalette = "414868;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;c0caf5";
-      };
+      # backdrop = "1a1b26";
+      # graphicalTerminal = {
+      #   background = "1a1b26";
+      #   foreground = "c0caf5";
+      #   brightBackground = "24283b";
+      #   brightForeground = "c0caf5";
+      #   palette = "15161e;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;a9b1d6";
+      #   brightPalette = "414868;f7768e;9ece6a;e0af68;7aa2f7;bb9af7;7dcfff;c0caf5";
+      # };
     };
   };
 
@@ -84,7 +84,9 @@
       "networkmanager"
       "wheel"
     ];
+    shell = pkgs.zsh;
   };
+  programs.zsh.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -132,7 +134,9 @@
   stylix = {
     enable = true;
     image = ../../assets/miku.png;
-    
+
+    targets.plymouth.enable = false;
+
     base16Scheme = {
       base00 = "1f1f28"; # Background (SumiInk1)
       base01 = "2a2a37"; # Lighter Background (SumiInk3)

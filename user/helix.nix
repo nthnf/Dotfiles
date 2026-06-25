@@ -14,7 +14,7 @@
       editor = {
         bufferline = "multiple";
 
-        text-width = 100;
+        text-width = 120;
 
         soft-wrap = {
           enable = true;

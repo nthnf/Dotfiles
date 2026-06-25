@@ -8,6 +8,7 @@
       "window-decoration" = false;
       font-size = 12;
       "window-theme" = "ghostty";
+      command = "tmux";
     };
   };
 }
